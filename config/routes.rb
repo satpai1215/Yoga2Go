@@ -1,6 +1,16 @@
 Yogaexpress::Application.routes.draw do
 
   root "pages#home"
+
+  resources :flashcards, only: [:index, :show]
+
+  match '/admin',  to: 'pages#admin_home', via: 'get'
+
+  scope '/admin' do
+    resources :flashcards, only: [:new, :edit, :destroy]
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

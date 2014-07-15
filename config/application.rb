@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Yogaexpress
   class Application < Rails::Application
 
-    APP_NAME = "Yoga2Go"
+    APP_NAME = "Yoga-2-Go"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
