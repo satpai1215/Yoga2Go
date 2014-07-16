@@ -1,2 +1,11 @@
-<h1>Flashcards#new</h1>
-<p>Find me in app/views/flashcards/new.html.erb</p>
+<h1>Create Flashcard</h1>
+<%= link_to "Back to Deck", @deck %>
+
+<div class="row">
+	<div class="span10">
+		<%= form_for [@deck, @flashcard] do |f| %>
+			<%= render 'fields', f: f %>
+			<div><%= f.submit "Create Flashcard", class: 'btn btn-large btn-primary' %></div>
+		<% end %>
+	</div>
+</div>	

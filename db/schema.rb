@@ -11,14 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715052328) do
+ActiveRecord::Schema.define(version: 20140716043508) do
 
-  create_table "flashcards", force: true do |t|
+  create_table "decks", force: true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "translation"
   end
+
+  add_index "decks", ["user_id"], name: "index_decks_on_user_id"
+
+  create_table "flashcards", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "side_one"
+    t.text     "side_two"
+    t.integer  "deck_id"
+  end
+
+  add_index "flashcards", ["deck_id"], name: "index_flashcards_on_deck_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

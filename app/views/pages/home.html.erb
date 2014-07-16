@@ -1,1 +1,8 @@
-<h1>Welcome to <%= app_name %>!</h1>
+<h1>Welcome to <%= app_name %></h1>
+
+<% if signed_in? %>
+	<%= link_to "Create New Flashcard Deck", new_deck_path %>
+
+<% else %>
+	<%= render 'sessions/new' %>
+<% end %>	

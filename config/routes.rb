@@ -1,14 +1,22 @@
 Yogaexpress::Application.routes.draw do
 
+  get "deck/index"
+  get "deck/show"
+  get "deck/edit"
+  get "deck/update"
+  get "deck/destroy"
   root "pages#home"
 
-  resources :flashcards, only: [:index, :show]
-
-  match '/admin',  to: 'pages#admin_home', via: 'get'
-
-  scope '/admin' do
-    resources :flashcards, only: [:new, :edit, :destroy]
+  resources :decks do
+    resources :flashcards
   end
+  resources :sessions,  only: [:new, :create, :destroy]
+  resources :users
+
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+  match '/signin',  to: 'sessions#new',     via: 'get'
+  match '/signup',  to: 'users#new',        via: 'get'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

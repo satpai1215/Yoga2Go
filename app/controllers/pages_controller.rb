@@ -4,10 +4,4 @@ class PagesController < ApplicationController
 
 	end
 
-	def admin_home
-
-	end
-
-	def admin_actions
-	end
 end
