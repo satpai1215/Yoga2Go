@@ -1,4 +1,5 @@
 class DecksController < ApplicationController
+  before_action :signed_in_user
   before_action :correct_user, except: [:new, :create, :index]    
 
 
@@ -43,6 +44,10 @@ class DecksController < ApplicationController
 private
   def deck_params
       params.require(:deck).permit(:title)
+  end
+
+  def signed_in_user
+    redirect_to root_path, notice: "You must be signed in to do that." unless signed_in?
   end
 
   def correct_user

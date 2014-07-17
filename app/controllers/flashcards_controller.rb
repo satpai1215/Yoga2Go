@@ -4,6 +4,9 @@ class FlashcardsController < ApplicationController
 
   def show
     @flashcards = @deck.flashcards.paginate(page: params[:page], per_page: 1).order('created_at ASC')
+    @front_content = @flashcard.side_one
+    @back_content = @flashcard.side_two
+
   end
 
   def new

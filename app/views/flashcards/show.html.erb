@@ -1,6 +1,20 @@
 <h1><%= link_to @deck.title, @deck %></h1>
 <%= link_to "Edit Card", edit_deck_flashcard_path(@deck, @flashcard) %> | 
 <%= link_to "Delete Card", deck_flashcard_path(@deck, @flashcard), method: :delete, data: {confirm: "You sure?"} %>
-<div class="flashcard-side1"><%= @flashcard.side_one %></div>
-<div class="flashcard-side2"><%= @flashcard.side_two %></div>
+<div class="row">	
+	<div class="flashcard-container span10 offset1">
+		<div class="card">
+			<div class="card-front"><%= @front_content %></div>
+			<div class="card-back"><%= @back_content %></div>
+		</div>
+	</div>
+</div>
+<%= javascript_tag do %>
+	$(function() {
+		$('.card').on('click', function(e) {
+			$(this).toggleClass('flipped');
+		});
+	});
+
+<% end %>
 
