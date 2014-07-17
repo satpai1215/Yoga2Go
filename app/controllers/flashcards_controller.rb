@@ -3,9 +3,13 @@ class FlashcardsController < ApplicationController
   before_action :get_flashcard, except: [:new, :create]
 
   def show
-    @flashcards = @deck.flashcards.paginate(page: params[:page], per_page: 1).order('created_at ASC')
-    @front_content = @flashcard.side_one
-    @back_content = @flashcard.side_two
+    #@flashcards = @deck.flashcards.paginate(page: params[:page], per_page: 1).order('created_at ASC')
+    @prev_id = @flashcard.id - 1
+    @next_id = @flashcard.id + 1
+    @last_id = @deck.flashcards.last.id
+    
+    @front_content = @flashcard.side_two
+    @back_content = @flashcard.side_one
 
   end
 

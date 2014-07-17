@@ -1,7 +1,6 @@
 Yogaexpress::Application.routes.draw do
 
   root "decks#index"
-
   resources :decks do
     resources :flashcards
   end

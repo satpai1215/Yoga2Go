@@ -6,7 +6,7 @@ class DecksController < ApplicationController
 
   def show
      @deck = Deck.find(params[:id])
-    @flashcards = @deck.flashcards.order('created_at ASC')
+    @flashcards = @deck.flashcards.paginate(page: params[:page], per_page: 20).order('created_at ASC')
   end
 
 private

@@ -1,7 +1,11 @@
-<h1><%= link_to @deck.title, @deck %></h1>
-<%= link_to "Edit Card", edit_deck_flashcard_path(@deck, @flashcard) %> | 
-<%= link_to "Delete Card", deck_flashcard_path(@deck, @flashcard), method: :delete, data: {confirm: "You sure?"} %>
-<div class="row">	
+<h2><%= link_to @deck.title, @deck %></h2>
+<div class="row">
+	<% if @prev_id > 0 %>
+		<%= link_to "Prev", deck_flashcard_path(@deck, @prev_id), class: "prev-link" %>
+	<% end %>
+	<% if @next_id <= @last_id %>
+		<%= link_to "Next", deck_flashcard_path(@deck, @next_id), class: "next-link" %>
+	<% end %>
 	<div class="flashcard-container span10 offset1">
 		<div class="card">
 			<div class="card-front"><%= @front_content %></div>
