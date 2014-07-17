@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Yogaexpress::Application.load_tasks
+Yoga2Go::Application.load_tasks
