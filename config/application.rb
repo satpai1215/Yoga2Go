@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Yoga2Go
+module Yogaexpress
   class Application < Rails::Application
 
     APP_NAME = "Yoga-2-Go"
