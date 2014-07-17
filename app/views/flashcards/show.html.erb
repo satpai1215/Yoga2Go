@@ -3,10 +3,18 @@
 </div>
 
 <div class="row">
+	<div><%#= session[:swap] %></div>
+	<%#= link_to "Swap Sides", deck_flashcard_path(@deck, @current_id) %>
+</div>
+
+<div class="row">
 	<div class ="flashcard-nav">
 		<% if @prev_id > 0 %>
 			<%= link_to "Prev", deck_flashcard_path(@deck, @prev_id), class: "prev-link btn btn-primary" %>
 		<% end %>
+
+		<%= link_to "Random", deck_flashcard_path(@deck, @random_id), class: "rand-link btn btn-primary" %>
+		
 		<% if @next_id <= @last_id %>
 			<%= link_to "Next", deck_flashcard_path(@deck, @next_id), class: "next-link btn btn-primary" %>
 		<% end %>
