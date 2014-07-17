@@ -1,4 +1,4 @@
-Yogaexpress::Application.routes.draw do
+Yoga2Go::Application.routes.draw do
 
   get "deck/index"
   get "deck/show"
