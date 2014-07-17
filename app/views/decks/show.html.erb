@@ -5,5 +5,6 @@
 		<% @flashcards.each_with_index do |card, index| %>
 			<li><%= link_to card.side_two, deck_flashcard_path(@deck, card) %></li>
 		<% end %>
+		<%= will_paginate @flashcards %>
 	<% end %>
 </ul>	

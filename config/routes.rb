@@ -1,4 +1,4 @@
-Yogaexpress::Application.routes.draw do
+Yoga2Go::Application.routes.draw do
 
   root "decks#index"
   resources :decks do
