@@ -1,12 +1,9 @@
-<h1><%= @deck.title %></h1>
-<%= link_to "Edit Deck", edit_deck_path(@deck) %> | 
-<%= link_to "Delete Deck", deck_path(@deck), method: :delete, data: {confirm: "You sure?"} %>
-<div><%= link_to "Add Flashcard", new_deck_flashcard_path(@deck) %></div>
+<h3><%= @deck.title %></h3>
 <ul class='flashcard-list'>
 	<% if @flashcards.any? %>
 		<% @flashcards.each_with_index do |card, index| %>
 			<li><%= link_to "Card ##{index+1}", deck_flashcard_path(@deck, card) %></li>
 		<% end %>
-		<%= will_paginate @flashcards %>
+		<%#= will_paginate @flashcards %>
 	<% end %>
 </ul>	

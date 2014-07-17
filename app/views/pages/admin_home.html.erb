@@ -1,9 +1,0 @@
-<h1>Welcome to <%= app_name %> Admin Page</h1>
-
-<% if signed_in? %>
-	<%= link_to "Create New Flashcard", new_flashcard_path %>
-
-<% else %>
-	<h2>Please Log In: </h2>
-	<%= render 'sessions/new' %>
-<% end %>	

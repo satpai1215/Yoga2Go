@@ -1,5 +1,5 @@
 class FlashcardsController < ApplicationController
-  before_action :correct_user
+  before_action :find_deck
   before_action :get_flashcard, except: [:new, :create]
 
   def show
@@ -47,11 +47,8 @@ private
       params.require(:flashcard).permit(:side_one, :side_two)
   end
 
-  def correct_user
+  def find_deck
     @deck = Deck.find(params[:deck_id])
-    unless @deck.belongs_to?(current_user)
-      redirect_to root_path, notice: "You are not authorized to do that"
-    end
   end
 
   def get_flashcard

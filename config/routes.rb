@@ -1,21 +1,14 @@
 Yogaexpress::Application.routes.draw do
 
-  get "deck/index"
-  get "deck/show"
-  get "deck/edit"
-  get "deck/update"
-  get "deck/destroy"
-  root "pages#home"
+  root "decks#index"
 
   resources :decks do
     resources :flashcards
   end
   resources :sessions,  only: [:new, :create, :destroy]
-  resources :users
 
-  match '/signout', to: 'sessions#destroy', via: 'delete'
-  match '/signin',  to: 'sessions#new',     via: 'get'
-  match '/signup',  to: 'users#new',        via: 'get'
+ # match '/signout', to: 'sessions#destroy', via: 'delete'
+ # match '/signin',  to: 'sessions#new',     via: 'get'
 
 
 
