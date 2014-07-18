@@ -5,17 +5,27 @@ class FlashcardsController < ApplicationController
   def show
     #@flashcards = @deck.flashcards.paginate(page: params[:page], per_page: 1).order('created_at ASC')
     @current_id = @flashcard.id
-    @prev_id = @current_id - 1
-    @next_id = @current_id + 1
-    @last_id = @deck.flashcards.last.id
+    last_id = @deck.flashcards.last.id
+
+    @prev_id = @current_id <= 1 ?  last_id : @current_id - 1
+    @next_id = @current_id >= last_id ?  1 : @current_id + 1
+
     r = Random.new
-    @random_id = r.rand(1..@last_id)
+    @random_id = r.rand(1..last_id)
 
-    if params[:swap]
-     session[:swap] = session[:swap].nil? ? true : !session[:swap]
-    end
+    # if params[:swap]
+    #  session[:swap] = session[:swap].nil? ? true : !session[:swap]
+    # end
 
-    if session[:swap]
+    # if session[:swap]
+    #   @front_content = @flashcard.side_one
+    #   @back_content = @flashcard.side_two
+    # else
+    #   @front_content = @flashcard.side_two
+    #   @back_content = @flashcard.side_one
+    # end
+
+    if rand(2).zero?
       @front_content = @flashcard.side_one
       @back_content = @flashcard.side_two
     else

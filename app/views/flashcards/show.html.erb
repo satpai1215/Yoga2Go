@@ -3,22 +3,17 @@
 </div>
 
 <div class="row">
-	<%= link_to "Hide Other Side", deck_flashcard_path(@deck, @current_id, swap: true) %>
+	<div class ="flashcard-nav btn-group">
+		<%= link_to "Prev", deck_flashcard_path(@deck, @prev_id), class: "prev-link btn btn-primary" %>
+		<%= link_to "Random", deck_flashcard_path(@deck, @random_id), class: "rand-link btn btn-primary" %>
+		<%= link_to "Next", deck_flashcard_path(@deck, @next_id), class: "next-link btn btn-primary" %>
+	</div>
 </div>
 
 <div class="row">
-	<div class ="flashcard-nav">
-		<% if @prev_id > 0 %>
-			<%= link_to "Prev", deck_flashcard_path(@deck, @prev_id), class: "prev-link btn btn-primary" %>
-		<% end %>
-
-		<%= link_to "Random", deck_flashcard_path(@deck, @random_id), class: "rand-link btn btn-primary" %>
-		
-		<% if @next_id <= @last_id %>
-			<%= link_to "Next", deck_flashcard_path(@deck, @next_id), class: "next-link btn btn-primary" %>
-		<% end %>
-	</div>
+	<%#= link_to "Hide Other Side", deck_flashcard_path(@deck, @current_id, swap: true)%>
 </div>
+
 <div class="row">
 	<div class="flashcard-container col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 ">
 		<div class="card">

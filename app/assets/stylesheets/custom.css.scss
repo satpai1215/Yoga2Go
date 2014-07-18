@@ -47,20 +47,11 @@ h1, h2, h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.prev-link {
-  font-size: 1.2em;
-  margin-right: 20px;
 
+.prev-link, .rand-link, .next-link {
+    font-size: 1.2em;
 }
 
-.next-link {
-  font-size: 1.2em;
-  margin-left: 20px;
-}
-
-.rand-link {
-  font-size: 1.2em;
-}
 
 .flashcard-container { 
   position: relative;
