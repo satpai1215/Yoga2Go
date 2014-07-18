@@ -3,8 +3,7 @@
 </div>
 
 <div class="row">
-	<div><%#= session[:swap] %></div>
-	<%#= link_to "Swap Sides", deck_flashcard_path(@deck, @current_id) %>
+	<%= link_to "Hide Other Side", deck_flashcard_path(@deck, @current_id, swap: true) %>
 </div>
 
 <div class="row">

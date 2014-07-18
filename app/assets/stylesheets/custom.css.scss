@@ -44,19 +44,24 @@ h1, h2, h3 {
 
 /* Flashcard Show */
 .flashcard-nav {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .prev-link {
-  width: 100px;
   font-size: 1.2em;
   margin-right: 20px;
+
 }
+
 .next-link {
-  width: 100px;
   font-size: 1.2em;
   margin-left: 20px;
 }
+
+.rand-link {
+  font-size: 1.2em;
+}
+
 .flashcard-container { 
   position: relative;
   -webkit-perspective: 800;

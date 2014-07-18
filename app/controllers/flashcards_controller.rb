@@ -11,6 +11,10 @@ class FlashcardsController < ApplicationController
     r = Random.new
     @random_id = r.rand(1..@last_id)
 
+    if params[:swap]
+     session[:swap] = session[:swap].nil? ? true : !session[:swap]
+    end
+
     if session[:swap]
       @front_content = @flashcard.side_one
       @back_content = @flashcard.side_two
@@ -19,7 +23,6 @@ class FlashcardsController < ApplicationController
       @back_content = @flashcard.side_one
     end
 
-    session[:swap] = ((session[:swap]).nil? ? true : !(session[:swap]))
   end
 
   def new
