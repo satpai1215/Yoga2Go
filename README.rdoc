@@ -1,5 +1,7 @@
-== Yoga2Go (yoga2go.herokuapp.com)
+== Yoga2Go
+
+yoga2go.herokuapp.com
 
 Mobile Friendly web-app containing Yoga Flashcards, for on-the-go studying
 
-Made for girlfriend's yoga training course
+(Made for girlfriend's yoga training course)
