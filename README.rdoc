@@ -1,4 +1,4 @@
-== Yoga2Go
+== Yoga2Go (yoga2go.herokuapp.com)
 
 Mobile Friendly web-app containing Yoga Flashcards, for on-the-go studying
 
